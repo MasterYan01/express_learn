@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記帳本</title>
+    <!-- 在這裡添加你的CSS樣式表或鏈接 -->
+</head>
+<style>
+    /* 通用樣式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* 表單樣式 */
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* 交易列表樣式 */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 增加一些其他樣式以改進設計 */
+
+</style>
+<body>
+    <header>
+        <h1>我的記帳本</h1>
+    </header>
+    <main>
+        <section id="transaction-form">
+            <h2>新增交易</h2>
+            <!-- 交易輸入表單 -->
+            <form>
+                <label for="transaction-name">交易名稱</label>
+                <input type="text" id="transaction-name" name="transaction-name" required>
+                
+                <label for="transaction-amount">金額</label>
+                <input type="number" id="transaction-amount" name="transaction-amount" required>
+                
+                <label for="transaction-date">日期</label>
+                <input type="date" id="transaction-date" name="transaction-date" required>
+                
+                <button type="submit">新增交易</button>
+            </form>
+        </section>
+
+        <section id="transaction-list">
+            <h2>交易列表</h2>
+            <!-- 交易列表顯示區域 -->
+            <ul>
+                <!-- 在這裡以列表項目顯示交易 -->
+                <!-- 例如：<li>交易名稱 - 金額 - 日期</li> -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 我的記帳本</p>
+    </footer>
+    <!-- 在這裡添加你的JavaScript代碼或鏈接 -->
+</body>
+</html>
