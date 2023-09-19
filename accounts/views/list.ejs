@@ -118,9 +118,14 @@ li {
             <h2>交易列表</h2>
             <!-- 交易列表顯示區域 -->
             <ul>
+                <%accounts.forEach(item=>{%>
                 <!-- 在這裡以列表項目顯示交易 -->
                 <!-- 例如：<li>交易名稱 - 金額 - 日期</li> -->
-            </ul>
+                <li><%=item.id%></li>
+                <li><a href="/account/<%=item.id%>"><span>刪除id</span></a></li>
+                
+                <%})%>
+            </ul> 
         </section>
     </main>
     <footer>
