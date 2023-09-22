@@ -10,12 +10,25 @@ mongoose.connection.once('open', () => {
     //創建文檔的結構物件
     //設置集和中文檔的屬性以及屬性的類型
     let BookSchema = new mongoose.Schema({
-        name:String,
-        author:String,
-        price:Number
+        name: {
+            type: String,
+            require: true, //該屬性不為空
+            unique: true //設置為獨一無二
+        },
+        author: {
+            type: String,
+            default: '匿名'
+        },
+        style: {
+            type: String,
+            enum: ['言情', '城市', '台南']
+        },
+        price: Number,
+        is_hot: Boolean,
+        pub_time: Date
     })
     //創建模型物件,對文檔操作的封裝物件
-    let BookModel = mongoose.model('books',BookSchema)
+    let BookModel = mongoose.model('books', BookSchema)
 
     //新增
     // BookModel.create({
@@ -31,15 +44,18 @@ mongoose.connection.once('open', () => {
     //     console.log(data);
     // })
     const bookData = {
-        name: '小銘',
-        author: 'ming',
-        price: 7
+        name: '西遊記@...@03',
+        author: '盧彥銘03',
+        price: 19.903,
+        is_hot: true,
+        pub_time: new Date(),
+        style: '言情'
     };
-    
+
     BookModel.create(bookData)
         .then(data => {
             // 如果没有出错，输出插入后的文档对象
-            console.log(data,'創建成功');
+            console.log(data);
             //關閉數據庫連接,項目運行中,不會添加該代碼
             mongoose.disconnect()
         })
