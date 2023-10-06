@@ -1,13 +1,5 @@
 var express = require('express');
 var router = express.Router();
-//登入lowdb
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const moment = require('moment')
-console.log(moment('2023-07-09'));
-const adapter = new FileSync(__dirname+'/../data/db.json')
-const db = low(adapter)
-const shortid = require('shortid')
 //記帳本的列表
 router.get('/account', function (req, res, next) {
   let accounts = db.get('accounts').value()
